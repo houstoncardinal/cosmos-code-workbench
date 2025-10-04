@@ -8,89 +8,143 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    /* Nebula Noir - Deep space theme */
+    --background: 240 8% 4%;
+    --foreground: 240 5% 96%;
+    
+    --card: 240 6% 8%;
+    --card-foreground: 240 5% 96%;
+    
+    --popover: 240 8% 6%;
+    --popover-foreground: 240 5% 96%;
+    
+    --primary: 270 100% 68%;
+    --primary-foreground: 240 5% 96%;
+    
+    --secondary: 240 6% 12%;
+    --secondary-foreground: 240 5% 96%;
+    
+    --muted: 240 6% 12%;
+    --muted-foreground: 240 5% 65%;
+    
+    --accent: 270 100% 68%;
+    --accent-foreground: 240 5% 96%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 240 5% 96%;
+    
+    --border: 240 6% 15%;
+    --input: 240 6% 15%;
+    --ring: 270 100% 68%;
+    
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* IDE specific tokens */
+    --editor-bg: 240 8% 4%;
+    --panel-bg: 240 6% 6%;
+    --glass-bg: 240 6% 8%;
+    --glass-border: 240 6% 18%;
+    --neon-glow: 270 100% 68%;
+    --neon-secondary: 200 100% 60%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270 100% 68%), hsl(200 100% 60%));
+    --gradient-glass: linear-gradient(135deg, hsla(240 6% 8% / 0.7), hsla(240 6% 12% / 0.7));
+    
+    /* Shadows */
+    --shadow-neon: 0 0 20px hsla(270 100% 68% / 0.3);
+    --shadow-glass: 0 8px 32px hsla(0 0% 0% / 0.4);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  /* Solar Dawn - Warm creative theme */
+  .theme-solar {
+    --background: 32 25% 96%;
+    --foreground: 32 50% 12%;
+    
+    --card: 32 20% 98%;
+    --card-foreground: 32 50% 12%;
+    
+    --popover: 32 25% 98%;
+    --popover-foreground: 32 50% 12%;
+    
+    --primary: 6 85% 65%;
+    --primary-foreground: 32 25% 98%;
+    
+    --secondary: 32 15% 92%;
+    --secondary-foreground: 32 50% 12%;
+    
+    --muted: 32 15% 92%;
+    --muted-foreground: 32 25% 45%;
+    
+    --accent: 35 90% 55%;
+    --accent-foreground: 32 25% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 32 25% 98%;
+    
+    --border: 32 15% 88%;
+    --input: 32 15% 88%;
+    --ring: 6 85% 65%;
+    
+    --editor-bg: 32 25% 96%;
+    --panel-bg: 32 20% 98%;
+    --glass-bg: 32 20% 95%;
+    --glass-border: 32 15% 88%;
+    --neon-glow: 6 85% 65%;
+    --neon-secondary: 35 90% 55%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(6 85% 65%), hsl(35 90% 55%));
+    --gradient-glass: linear-gradient(135deg, hsla(32 20% 98% / 0.9), hsla(32 15% 92% / 0.9));
+    
+    --shadow-neon: 0 0 20px hsla(6 85% 65% / 0.25);
+    --shadow-glass: 0 8px 32px hsla(32 25% 12% / 0.1);
+  }
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  /* Aurora Mint - Cool future theme */
+  .theme-aurora {
+    --background: 220 18% 12%;
+    --foreground: 180 5% 96%;
+    
+    --card: 220 16% 16%;
+    --card-foreground: 180 5% 96%;
+    
+    --popover: 220 18% 14%;
+    --popover-foreground: 180 5% 96%;
+    
+    --primary: 174 75% 65%;
+    --primary-foreground: 220 18% 12%;
+    
+    --secondary: 220 16% 20%;
+    --secondary-foreground: 180 5% 96%;
+    
+    --muted: 220 16% 20%;
+    --muted-foreground: 180 5% 65%;
+    
+    --accent: 190 90% 60%;
+    --accent-foreground: 220 18% 12%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 180 5% 96%;
+    
+    --border: 220 16% 24%;
+    --input: 220 16% 24%;
+    --ring: 174 75% 65%;
+    
+    --editor-bg: 220 18% 12%;
+    --panel-bg: 220 16% 14%;
+    --glass-bg: 220 16% 16%;
+    --glass-border: 220 16% 28%;
+    --neon-glow: 174 75% 65%;
+    --neon-secondary: 190 90% 60%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(174 75% 65%), hsl(190 90% 60%));
+    --gradient-glass: linear-gradient(135deg, hsla(220 16% 16% / 0.8), hsla(220 16% 20% / 0.8));
+    
+    --shadow-neon: 0 0 20px hsla(174 75% 65% / 0.3);
+    --shadow-glass: 0 8px 32px hsla(0 0% 0% / 0.3);
   }
 }
 
@@ -100,6 +154,26 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: linear-gradient(135deg, 
+      hsla(var(--glass-bg) / 0.6), 
+      hsla(var(--glass-bg) / 0.4));
+    backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid hsl(var(--glass-border) / 0.3);
+    box-shadow: var(--shadow-glass);
+  }
+  
+  .neon-glow {
+    box-shadow: var(--shadow-neon);
+  }
+  
+  .smooth-transition {
+    transition: var(--transition-smooth);
   }
 }
