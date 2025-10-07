@@ -28,6 +28,8 @@ export interface IdeState {
   gitPanelOpen: boolean;
   fileExplorerOpen: boolean;
   aiHistory: AiMessage[];
+  simulatorOpen: boolean;
+  codeGeneratorOpen: boolean;
   
   setTheme: (theme: ThemeName) => void;
   addTab: (tab: EditorTab) => void;
@@ -41,6 +43,8 @@ export interface IdeState {
   toggleFileExplorer: () => void;
   addAiMessage: (message: AiMessage) => void;
   clearAiHistory: () => void;
+  toggleSimulator: () => void;
+  toggleCodeGenerator: () => void;
 }
 
 export const useIdeStore = create<IdeState>((set) => ({
@@ -53,6 +57,8 @@ export const useIdeStore = create<IdeState>((set) => ({
   gitPanelOpen: false,
   fileExplorerOpen: true,
   aiHistory: [],
+  simulatorOpen: false,
+  codeGeneratorOpen: false,
   
   setTheme: (theme) => set({ theme }),
   addTab: (tab) => set((state) => ({ 
@@ -85,4 +91,6 @@ export const useIdeStore = create<IdeState>((set) => ({
     aiHistory: [...state.aiHistory, message] 
   })),
   clearAiHistory: () => set({ aiHistory: [] }),
+  toggleSimulator: () => set((state) => ({ simulatorOpen: !state.simulatorOpen })),
+  toggleCodeGenerator: () => set((state) => ({ codeGeneratorOpen: !state.codeGeneratorOpen })),
 }));

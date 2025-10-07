@@ -1,4 +1,4 @@
-import { Files, GitBranch, Terminal, Sparkles, Palette, Command } from 'lucide-react';
+import { Files, GitBranch, Terminal, Sparkles, Palette, Command, Monitor, Code2 } from 'lucide-react';
 import { useIdeStore } from '@/store/ideStore';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
@@ -9,11 +9,15 @@ export const ActivityBar = () => {
     gitPanelOpen, 
     terminalOpen, 
     aiPanelOpen,
+    simulatorOpen,
+    codeGeneratorOpen,
     toggleFileExplorer,
     toggleGitPanel,
     toggleTerminal,
     toggleAiPanel,
-    toggleCommandPalette
+    toggleCommandPalette,
+    toggleSimulator,
+    toggleCodeGenerator
   } = useIdeStore();
 
   return (
@@ -64,6 +68,38 @@ export const ActivityBar = () => {
           </Button>
         </TooltipTrigger>
         <TooltipContent side="right">AI Copilot</TooltipContent>
+      </Tooltip>
+
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="icon"
+            className={`w-10 h-10 smooth-transition metal-shine ${
+              codeGeneratorOpen ? 'bg-primary/20 text-primary' : 'text-muted-foreground hover:text-foreground'
+            }`}
+            onClick={toggleCodeGenerator}
+          >
+            <Code2 className="w-5 h-5" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent side="right">Code Generator</TooltipContent>
+      </Tooltip>
+
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="icon"
+            className={`w-10 h-10 smooth-transition metal-shine ${
+              simulatorOpen ? 'bg-primary/20 text-primary' : 'text-muted-foreground hover:text-foreground'
+            }`}
+            onClick={toggleSimulator}
+          >
+            <Monitor className="w-5 h-5" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent side="right">Device Simulator</TooltipContent>
       </Tooltip>
 
       <div className="flex-1" />
