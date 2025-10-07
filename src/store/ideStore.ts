@@ -1,6 +1,14 @@
 import { create } from 'zustand';
 
-export type ThemeName = 'nebula-noir' | 'solar-dawn' | 'aurora-mint';
+export type ThemeName = 'obsidian' | 'pearl' | 'titanium';
+
+export interface AiMessage {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  timestamp: number;
+  mode?: string;
+}
 
 export interface EditorTab {
   id: string;
@@ -19,6 +27,7 @@ export interface IdeState {
   terminalOpen: boolean;
   gitPanelOpen: boolean;
   fileExplorerOpen: boolean;
+  aiHistory: AiMessage[];
   
   setTheme: (theme: ThemeName) => void;
   addTab: (tab: EditorTab) => void;
@@ -30,10 +39,12 @@ export interface IdeState {
   toggleTerminal: () => void;
   toggleGitPanel: () => void;
   toggleFileExplorer: () => void;
+  addAiMessage: (message: AiMessage) => void;
+  clearAiHistory: () => void;
 }
 
 export const useIdeStore = create<IdeState>((set) => ({
-  theme: 'nebula-noir',
+  theme: 'obsidian',
   activeTabId: null,
   tabs: [],
   commandPaletteOpen: false,
@@ -41,6 +52,7 @@ export const useIdeStore = create<IdeState>((set) => ({
   terminalOpen: false,
   gitPanelOpen: false,
   fileExplorerOpen: true,
+  aiHistory: [],
   
   setTheme: (theme) => set({ theme }),
   addTab: (tab) => set((state) => ({ 
@@ -69,4 +81,8 @@ export const useIdeStore = create<IdeState>((set) => ({
   toggleFileExplorer: () => set((state) => ({ 
     fileExplorerOpen: !state.fileExplorerOpen 
   })),
+  addAiMessage: (message) => set((state) => ({ 
+    aiHistory: [...state.aiHistory, message] 
+  })),
+  clearAiHistory: () => set({ aiHistory: [] }),
 }));

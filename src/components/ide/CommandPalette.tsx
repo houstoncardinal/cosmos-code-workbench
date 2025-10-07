@@ -60,25 +60,25 @@ export const CommandPalette = () => {
 
             <Command.Group heading="Themes" className="text-xs text-muted-foreground px-2 py-1.5">
               <Command.Item
-                onSelect={() => handleSelect(() => setTheme('nebula-noir'))}
+                onSelect={() => handleSelect(() => setTheme('obsidian'))}
                 className="flex items-center gap-3 px-3 py-2 rounded cursor-pointer hover:bg-primary/20 smooth-transition"
               >
                 <Moon className="w-4 h-4 text-primary" />
-                <span>Nebula Noir</span>
+                <span>Obsidian</span>
               </Command.Item>
               <Command.Item
-                onSelect={() => handleSelect(() => setTheme('solar-dawn'))}
+                onSelect={() => handleSelect(() => setTheme('pearl'))}
                 className="flex items-center gap-3 px-3 py-2 rounded cursor-pointer hover:bg-primary/20 smooth-transition"
               >
                 <Sun className="w-4 h-4 text-primary" />
-                <span>Solar Dawn</span>
+                <span>Pearl</span>
               </Command.Item>
               <Command.Item
-                onSelect={() => handleSelect(() => setTheme('aurora-mint'))}
+                onSelect={() => handleSelect(() => setTheme('titanium'))}
                 className="flex items-center gap-3 px-3 py-2 rounded cursor-pointer hover:bg-primary/20 smooth-transition"
               >
                 <Zap className="w-4 h-4 text-primary" />
-                <span>Aurora Mint</span>
+                <span>Titanium</span>
               </Command.Item>
             </Command.Group>
 

@@ -3,7 +3,7 @@ import { useIdeStore } from '@/store/ideStore';
 import { ActivityBar } from '@/components/ide/ActivityBar';
 import { FileExplorer } from '@/components/ide/FileExplorer';
 import { EditorArea } from '@/components/ide/EditorArea';
-import { AiPanel } from '@/components/ide/AiPanel';
+import { EnhancedAiPanel } from '@/components/ide/EnhancedAiPanel';
 import { GitPanel } from '@/components/ide/GitPanel';
 import { TerminalPanel } from '@/components/ide/TerminalPanel';
 import { CommandPalette } from '@/components/ide/CommandPalette';
@@ -19,11 +19,11 @@ const Index = () => {
 
   useEffect(() => {
     // Apply theme to document
-    document.documentElement.classList.remove('theme-solar', 'theme-aurora');
-    if (theme === 'solar-dawn') {
-      document.documentElement.classList.add('theme-solar');
-    } else if (theme === 'aurora-mint') {
-      document.documentElement.classList.add('theme-aurora');
+    document.documentElement.classList.remove('theme-pearl', 'theme-titanium');
+    if (theme === 'pearl') {
+      document.documentElement.classList.add('theme-pearl');
+    } else if (theme === 'titanium') {
+      document.documentElement.classList.add('theme-titanium');
     }
   }, [theme]);
 
@@ -40,7 +40,7 @@ const Index = () => {
           {terminalOpen && <TerminalPanel />}
         </div>
         
-        {aiPanelOpen && <AiPanel />}
+        {aiPanelOpen && <EnhancedAiPanel />}
       </div>
 
       <CommandPalette />

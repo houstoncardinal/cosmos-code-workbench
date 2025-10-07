@@ -17,7 +17,7 @@ export const ActivityBar = () => {
   } = useIdeStore();
 
   return (
-    <div className="w-12 glass-panel border-r flex flex-col items-center py-4 gap-2">
+    <div className="w-12 metal-panel border-r flex flex-col items-center py-4 gap-2">
       <Tooltip>
         <TooltipTrigger asChild>
           <Button
@@ -55,8 +55,8 @@ export const ActivityBar = () => {
           <Button
             variant="ghost"
             size="icon"
-            className={`w-10 h-10 smooth-transition ${
-              aiPanelOpen ? 'bg-primary/20 text-primary neon-glow' : 'text-muted-foreground hover:text-foreground'
+            className={`w-10 h-10 smooth-transition metal-shine ${
+              aiPanelOpen ? 'bg-primary/20 text-primary' : 'text-muted-foreground hover:text-foreground'
             }`}
             onClick={toggleAiPanel}
           >
@@ -114,7 +114,7 @@ const ThemeSelector = () => {
           size="icon"
           className="w-10 h-10 text-muted-foreground hover:text-foreground smooth-transition"
           onClick={() => {
-            const themes: ('nebula-noir' | 'solar-dawn' | 'aurora-mint')[] = ['nebula-noir', 'solar-dawn', 'aurora-mint'];
+            const themes: ('obsidian' | 'pearl' | 'titanium')[] = ['obsidian', 'pearl', 'titanium'];
             const currentIndex = themes.indexOf(theme);
             const nextTheme = themes[(currentIndex + 1) % themes.length];
             setTheme(nextTheme);
