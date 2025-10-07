@@ -162,6 +162,13 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground overflow-hidden;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Mobile tap highlight removal */
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -207,5 +214,23 @@ All colors MUST be HSL.
   
   .sharp-shadow {
     box-shadow: var(--shadow-sharp);
+  }
+
+  /* Mobile-friendly scrollbar hiding */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Touch-friendly tap targets */
+  @media (max-width: 768px) {
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
   }
 }

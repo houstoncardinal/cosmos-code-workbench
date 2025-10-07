@@ -21,7 +21,7 @@ export const ActivityBar = () => {
   } = useIdeStore();
 
   return (
-    <div className="w-12 metal-panel border-r flex flex-col items-center py-4 gap-2">
+    <div className="hidden md:flex w-12 metal-panel border-r flex-col items-center py-4 gap-2">
       <Tooltip>
         <TooltipTrigger asChild>
           <Button

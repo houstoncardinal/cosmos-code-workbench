@@ -100,7 +100,7 @@ export const EnhancedAiPanel = () => {
   };
 
   return (
-    <div className="w-96 metal-panel border-l flex flex-col h-full">
+    <div className="w-full md:w-96 metal-panel border-l flex flex-col h-full">
       {/* Header */}
       <div className="px-4 py-3 border-b border-border metal-shine">
         <div className="flex items-center justify-between">

@@ -33,7 +33,7 @@ const mockFiles: FileNode[] = [
 
 export const FileExplorer = () => {
   return (
-    <div className="w-64 glass-panel border-r flex flex-col h-full">
+    <div className="w-full md:w-64 glass-panel border-r flex flex-col h-full">
       <div className="px-4 py-3 border-b border-border">
         <h2 className="text-sm font-semibold text-foreground">EXPLORER</h2>
       </div>

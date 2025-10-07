@@ -68,10 +68,10 @@ export const DeviceSimulator = ({ onClose }: DeviceSimulatorProps) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm overflow-auto">
       <div className="h-full flex flex-col">
         {/* Header */}
-        <div className="h-14 metal-panel border-b flex items-center justify-between px-6">
+        <div className="h-14 metal-panel border-b flex items-center justify-between px-3 md:px-6 overflow-x-auto">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <Monitor className="w-5 h-5 text-primary" />
@@ -86,7 +86,7 @@ export const DeviceSimulator = ({ onClose }: DeviceSimulatorProps) => {
                   if (device) setSelectedDevice(device);
                 }}
               >
-                <SelectTrigger className="w-[240px] h-8 text-xs metal-shine">
+                <SelectTrigger className="w-[180px] md:w-[240px] h-8 text-xs metal-shine">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="glass-panel">
@@ -115,7 +115,7 @@ export const DeviceSimulator = ({ onClose }: DeviceSimulatorProps) => {
               </Button>
 
               <div className="flex items-center gap-2 ml-2">
-                <span className="text-xs text-muted-foreground">Scale:</span>
+                <span className="text-xs text-muted-foreground hidden md:inline">Scale:</span>
                 <Select
                   value={scale.toString()}
                   onValueChange={(val) => setScale(parseFloat(val))}
@@ -135,7 +135,7 @@ export const DeviceSimulator = ({ onClose }: DeviceSimulatorProps) => {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="text-xs text-muted-foreground">
+            <div className="text-xs text-muted-foreground hidden sm:block">
               {currentWidth} × {currentHeight} • {selectedDevice.os.toUpperCase()}
             </div>
             <Button
